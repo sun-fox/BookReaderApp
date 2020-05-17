@@ -13,6 +13,7 @@ const getAuthorsQuery = gql`
     authors{
         name
         age
+        id
     }
 }
 `
