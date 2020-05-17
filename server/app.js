@@ -1,9 +1,11 @@
 var express = require('express'),
     app = express(),
-    graphqlHTTP = require('express-graphql');
+    graphqlHTTP = require('express-graphql'),
+    schema = require('./schema/schema');
     
 app.use('/graphql',graphqlHTTP({
-
+    schema:schema,
+    graphiql:true
 }));
 
 app.listen(4000, ()=>{
