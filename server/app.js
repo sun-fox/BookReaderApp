@@ -2,8 +2,13 @@ var express = require('express'),
     app = express(),
     graphqlHTTP = require('express-graphql'),
     schema = require('./schema/schema'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    cors = require('cors');
     
+// Allow Cross-Origin Requests
+app.use(cors());
+
+//allow mongoose requests 
 mongoose.connect("mongodb://localhost/BookReader_GQL",{ useNewUrlParser: true, useUnifiedTopology: true },()=>{
     console.log("database connected.....")
 });
